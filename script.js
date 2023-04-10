@@ -29,10 +29,27 @@ class Meatbag {
     }
 }
 
+class PlayerCharacter extends Meatbag{
+    constructor(name, race, gender){
+        super(name, race, gender)
+    }
+    talk(target, quote){
+        if(typeof target == 'undefined'){
+            console.log(typeof target);
+            console.log(`You cannot speak to ${target} right now.`);
+    
+        } else {
+            console.log(typeof target);
+            console.log(`${target.name} would love to talk to you.`);
+        }
+}}
+
 john = new Meatbag('John', 'Elven', 'Male');
 john.introduceSelf();
 john.descAffinity();
 
-jordan = new Meatbag('Jordan', 'Human', 'Male');
+jordan = new PlayerCharacter('Jordan', 'Human', 'Male');
 jordan.introduceSelf;
 john.fight(jordan);
+jordan.talk(darius)
+jordan.talk(john)
