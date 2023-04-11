@@ -42,7 +42,15 @@ class PlayerCharacter extends Meatbag{
             console.log(typeof target);
             console.log(`${target.name} would love to talk to you.`);
         }
-}}
+    }
+    walk() {
+        console.log('There you go, walking again.');
+    }
+    look() {
+        const tar = prompt('What are you looking at?');
+        console.log(`That is a rather nice ${tar}.`)
+    }
+}
 
 john = new Meatbag('John', 'Elven', 'Male');
 john.introduceSelf();
@@ -51,5 +59,6 @@ john.descAffinity();
 jordan = new PlayerCharacter('Jordan', 'Human', 'Male');
 jordan.introduceSelf;
 john.fight(jordan);
-jordan.talk(darius)
+//jordan.talk(darius)
 jordan.talk(john)
+jordan.look()
