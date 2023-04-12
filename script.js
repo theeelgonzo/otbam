@@ -1,3 +1,14 @@
+const outBox = document.getElementById('output')
+const textBox = document.getElementById('textBox')
+const subBut = document.getElementById('subBut')
+
+function addText(){
+    let text = textBox.textContent;
+    let outText = outBox.textContent;
+    outText = text;
+}
+subBut.addEventListener('click', addText);
+
 console.log('Welcome to the electro jungle.');
 class Meatbag {
     constructor(name, race, gender) {
@@ -61,4 +72,5 @@ jordan.introduceSelf;
 john.fight(jordan);
 //jordan.talk(darius)
 jordan.talk(john)
-jordan.look()
+//jordan.look()
+
