@@ -1,3 +1,14 @@
+const outBox = document.getElementById('output');
+const textBox = document.getElementById('textBox');
+const subBut = document.getElementById('subBut');
+
+function addText() {
+    let text = textBox.textContent;
+    let outText = outBox.textContent;
+    outText = text;
+}
+subBut.addEventListener('click', addText);
+
 console.log('Welcome to the electro jungle.');
 class Meatbag {
     constructor(name, race, gender) {
@@ -42,6 +53,13 @@ class PlayerCharacter extends Meatbag {
             console.log(`${target.name} would love to talk to you.`);
         }
     }
+    walk() {
+        console.log('There you go, walking again.');
+    }
+    look() {
+        const tar = prompt('What are you looking at?');
+        console.log(`That is a rather nice ${tar}.`);
+    }
 }
 
 john = new Meatbag('John', 'Elven', 'Male');
@@ -51,5 +69,5 @@ john.descAffinity();
 jordan = new PlayerCharacter('Jordan', 'Human', 'Male');
 jordan.introduceSelf;
 john.fight(jordan);
-//jordan.talk(darius);
+jordan.talk(darius);
 jordan.talk(john);

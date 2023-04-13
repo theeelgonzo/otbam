@@ -1,0 +1,5 @@
+.box {
+    height: 10em;
+    width: 10em;
+    border: solid black 1px;
+}
