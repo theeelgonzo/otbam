@@ -1,13 +1,30 @@
 document.getElementById('subBut').addEventListener('click', function () {
-    const command = document.getElementById('textBox').value;
-//    const output = document.getElementById('outBox').textContent
-   // console.log(command);
-    //document.getElementById('outBox').textContent = command;
+    let command = document.getElementById('textBox').value;
     //Add switch bank here to interpret command
     switch(command) {
         case 'look':
-            document.getElementById('outBox').textContent = 'What are you looking at, G?'
-
+            boxPrint('What are you looking at, G?');
+            console.log('You executed the look command.');
+            break
+        case 'fight':
+            document.getElementById('outBox').textContent = 'Are you looking to tussle?';
+            console.log('You executed the fight command.');
+            break
+        case 'go':
+            document.getElementById('outBox').textContent = 'Get your walking boots on, pal.';
+            console.log('You executed the go command.');
+            break
+        case 'talk':
+            document.getElementById('outBox').textContent = 'What would you like to chat about?';
+            console.log('You executed the talk command.');
+            break
+        case 'use':
+            document.getElementById('outBox').textContent = 'You cannot use that for what you think you can';
+            console.log('You executed the use command.');
+            break
+        default:
+            console.log('That\'s not a command. Try something else.')
+            break
     }
 });
 
