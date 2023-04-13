@@ -1,7 +1,14 @@
 document.getElementById('subBut').addEventListener('click', function () {
     const command = document.getElementById('textBox').value;
-    console.log(command);
-    document.getElementById('outBox').textContent = command;
+//    const output = document.getElementById('outBox').textContent
+   // console.log(command);
+    //document.getElementById('outBox').textContent = command;
+    //Add switch bank here to interpret command
+    switch(command) {
+        case 'look':
+            document.getElementById('outBox').textContent = 'What are you looking at, G?'
+
+    }
 });
 
 function boxPrint(message) {
