@@ -1,13 +1,12 @@
-const outBox = document.getElementById('output');
-const textBox = document.getElementById('textBox');
-const subBut = document.getElementById('subBut');
+document.getElementById('subBut').addEventListener('click', function () {
+    const command = document.getElementById('textBox').value;
+    console.log(command);
+    document.getElementById('outBox').textContent = command;
+});
 
-function addText() {
-    let text = textBox.textContent;
-    let outText = outBox.textContent;
-    outText = text;
+function boxPrint(message) {
+    document.getElementById('outBox').textContent = message;
 }
-subBut.addEventListener('click', addText);
 
 console.log('Welcome to the electro jungle.');
 class Meatbag {
@@ -69,5 +68,5 @@ john.descAffinity();
 jordan = new PlayerCharacter('Jordan', 'Human', 'Male');
 jordan.introduceSelf;
 john.fight(jordan);
-jordan.talk(darius);
+//jordan.talk(darius);
 jordan.talk(john);
