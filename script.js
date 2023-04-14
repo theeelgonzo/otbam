@@ -1,3 +1,17 @@
+const dungeon = {
+    roomOne: {
+        wallNorth: {
+            doorNorth: {
+                appearance: 'A simple wooden door. It appears to be unlocked',
+                goThru(){
+                    boxPrint('You went through the north door!');
+                },
+            },
+            appearance: 'A wall with a door.',
+        }
+    }
+}
+
 document.getElementById('subBut').addEventListener('click', function () {
     let command = document.getElementById('textBox').value;
     //Add switch bank here to interpret command
