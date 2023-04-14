@@ -1,5 +1,14 @@
 .box {
-    height: 10em;
-    width: 10em;
+    height: 20em;
+    width: 20em;
     border: solid black 1px;
+    margin: auto;
+}
+
+#textBox {
+    margin:auto;
+}
+
+#subBut {
+    margin:auto;
 }
