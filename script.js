@@ -8,9 +8,9 @@ class Door {
         this.description = description;
         this.destination = destination;
     }
-    goThru(destination) {
+    goThru() {
         boxPrint(`You went through the ${this.name}`);
-        dungeon.pcLocation = destination;
+        dungeon.pcLocation = this.destination;
         return dungeon.pcLocation;
     }
     describe() {
@@ -39,7 +39,9 @@ const dungeon = {
     roomOne: {
         doorNorth: new Door('North Door', 2, false, 'a solid door', roomTwo),
     },
-    roomTwo: {},
+    roomTwo: {
+        doorNorth: new Door('South Door', 2, false, 'a solid door', roomOne),
+    },
 };
 
 document.getElementById('subBut').addEventListener('click', function () {
