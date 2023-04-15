@@ -3,13 +3,18 @@ const dungeon = {
         wallNorth: {
             doorNorth: {
                 appearance: 'A simple wooden door. It appears to be unlocked',
-                goThru(){
-                    boxPrint('You went through the north door!');
-                },
+                goThru('North Door', dungeon.roomTwo),
             },
             appearance: 'A wall with a door.',
         }
-    }
+    },
+    roomTwo: {}
+}
+
+function goThru(target, destination){
+    boxPrint(`You went through the ${target}`);
+    PlayerCharacter.pcLocation = destination;
+    console.log(PlayerCharacter.pcLocation)
 }
 
 document.getElementById('subBut').addEventListener('click', function () {
@@ -81,6 +86,7 @@ class PlayerCharacter extends Meatbag {
     constructor(name, race, gender) {
         super(name, race, gender);
     }
+    pcLocation = dungeon.roomOne;
     talk(target, quote) {
         if (typeof target == 'undefined') {
             console.log(typeof target);
