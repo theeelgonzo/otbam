@@ -1,34 +1,43 @@
 //A door class. Use for generating doors in rooms & halls.
 //hp for breakability, not yet in use. Use small integer value. Name for clarity, ie. 'North Door' or 'South Door'. Description populates describe method for PC examine method. isLocked is a boolean value. Does exactly what it says on the tin.
 class Door {
-    constructor(name, hp, isLocked, description) {
+    constructor(name, hp, isLocked, description, destination) {
         this.hp = hp;
         this.isLocked = isLocked;
         this.name = name;
         this.description = description;
+        this.destination = destination;
     }
     goThru(destination) {
         boxPrint(`You went through the ${this.name}`);
         dungeon.pcLocation = destination;
         return dungeon.pcLocation;
-        console.log(dungeon.pcLocation);
     }
     describe() {
         boxPrint(description);
     }
 }
 
-class Room {}
+class Room {
+    constructor(appearance, exam) {
+        this.appearance = appearance;
+        this.exam = exam;
+    }
+    describe() {
+        boxPrint(this.appearance);
+    }
+    examine() {
+        boxPrint(this.exam);
+    }
+}
+
+roomOne = new Room('very nice', 'a nice room');
+roomTwo = new Room('super spooky', 'is that bones over there?');
 
 const dungeon = {
     pcLocation: roomOne,
     roomOne: {
-        wallNorth: {
-            doorNorth: {
-                appearance: 'A simple wooden door. It appears to be unlocked',
-            },
-            appearance: 'A wall with a door.',
-        },
+        doorNorth: new Door('North Door', 2, false, 'a solid door', roomTwo),
     },
     roomTwo: {},
 };
@@ -104,8 +113,11 @@ class Meatbag {
 
 class PlayerCharacter extends Meatbag {
     constructor(name, race, gender, pcLocation, hasKey) {
-        this.pcLocation = dungeon.roomOne;
-        this.hasKey = false;
+        super(name, race, gender);
+        {
+            this.pcLocation = dungeon.roomOne;
+            this.hasKey = false;
+        }
     } //{
     //super(name, race, gender);
     //}
