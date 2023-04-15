@@ -13,8 +13,8 @@ const dungeon = {
 
 function goThru(target, destination){
     boxPrint(`You went through the ${target}`);
-    PlayerCharacter.pcLocation = destination;
-    console.log(PlayerCharacter.pcLocation)
+    return PlayerCharacter.pcLocation = destination;
+    console.log(PlayerCharacter.pcLocation);
 }
 
 document.getElementById('subBut').addEventListener('click', function () {
