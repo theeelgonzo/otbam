@@ -1,49 +1,80 @@
-const dungeon = {
-    roomOne: {
-        wallNorth: {
-            doorNorth: {
-                appearance: 'A simple wooden door. It appears to be unlocked',
-                goThru('North Door', dungeon.roomTwo),
-            },
-            appearance: 'A wall with a door.',
-        }
-    },
-    roomTwo: {}
+//A door class. Use for generating doors in rooms & halls.
+//hp for breakability, not yet in use. Use small integer value. Name for clarity, ie. 'North Door' or 'South Door'. Description populates describe method for PC examine method. isLocked is a boolean value. Does exactly what it says on the tin.
+class Door {
+    constructor(name, hp, isLocked, description, destination) {
+        this.hp = hp;
+        this.isLocked = isLocked;
+        this.name = name;
+        this.description = description;
+        this.destination = destination;
+    }
+    goThru() {
+        boxPrint(`You went through the ${this.name}`);
+        dungeon.pcLocation = this.destination;
+        return dungeon.pcLocation;
+    }
+    describe() {
+        boxPrint(description);
+    }
 }
 
-function goThru(target, destination){
-    boxPrint(`You went through the ${target}`);
-    return PlayerCharacter.pcLocation = destination;
-    console.log(PlayerCharacter.pcLocation);
+class Room {
+    constructor(appearance, exam) {
+        this.appearance = appearance;
+        this.exam = exam;
+    }
+    describe() {
+        boxPrint(this.appearance);
+    }
+    examine() {
+        boxPrint(this.exam);
+    }
 }
+
+roomOne = new Room('very nice', 'a nice room');
+roomTwo = new Room('super spooky', 'is that bones over there?');
+
+const dungeon = {
+    pcLocation: roomOne,
+    roomOne: {
+        doorNorth: new Door('North Door', 2, false, 'a solid door', roomTwo),
+    },
+    roomTwo: {
+        doorNorth: new Door('South Door', 2, false, 'a solid door', roomOne),
+    },
+};
 
 document.getElementById('subBut').addEventListener('click', function () {
     let command = document.getElementById('textBox').value;
     //Add switch bank here to interpret command
-    switch(command) {
+    switch (command) {
         case 'look':
             boxPrint('What are you looking at, G?');
             console.log('You executed the look command.');
-            break
+            break;
         case 'fight':
-            document.getElementById('outBox').textContent = 'Are you looking to tussle?';
+            document.getElementById('outBox').textContent =
+                'Are you looking to tussle?';
             console.log('You executed the fight command.');
-            break
+            break;
         case 'go':
-            document.getElementById('outBox').textContent = 'Get your walking boots on, pal.';
+            document.getElementById('outBox').textContent =
+                'Get your walking boots on, pal.';
             console.log('You executed the go command.');
-            break
+            break;
         case 'talk':
-            document.getElementById('outBox').textContent = 'What would you like to chat about?';
+            document.getElementById('outBox').textContent =
+                'What would you like to chat about?';
             console.log('You executed the talk command.');
-            break
+            break;
         case 'use':
-            document.getElementById('outBox').textContent = 'You cannot use that for what you think you can';
+            document.getElementById('outBox').textContent =
+                'You cannot use that for what you think you can';
             console.log('You executed the use command.');
-            break
+            break;
         default:
-            console.log('That\'s not a command. Try something else.')
-            break
+            console.log("That's not a command. Try something else.");
+            break;
     }
 });
 
@@ -83,10 +114,16 @@ class Meatbag {
 }
 
 class PlayerCharacter extends Meatbag {
-    constructor(name, race, gender) {
+    constructor(name, race, gender, pcLocation, hasKey) {
         super(name, race, gender);
-    }
-    pcLocation = dungeon.roomOne;
+        {
+            this.pcLocation = dungeon.roomOne;
+            this.hasKey = false;
+        }
+    } //{
+    //super(name, race, gender);
+    //}
+
     talk(target, quote) {
         if (typeof target == 'undefined') {
             console.log(typeof target);

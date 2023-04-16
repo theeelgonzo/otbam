@@ -1,14 +1,20 @@
 .box {
     height: 20em;
     width: 20em;
-    border: solid black 1px;
+    border: solid black 5px;
     margin: auto;
+    text-align: center;
+}
+
+#headerText {
+    font-size: 2em;
+    font-weight: 900;
 }
 
 #textBox {
-    margin:auto;
+    margin: auto;
 }
 
 #subBut {
-    margin:auto;
+    margin: auto;
 }
