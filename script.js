@@ -9,12 +9,16 @@ class Door {
         this.destination = destination;
     }
     goThru() {
+        if(!isLocked){
         boxPrint(`You went through the ${this.name}`);
         dungeon.pcLocation = this.destination;
         return dungeon.pcLocation;
-    }
+            
+        } else {
+            boxPrint('This door is locked!');
+        }}
     describe() {
-        boxPrint(description);
+        boxPrint(this.description);
     }
 }
 
@@ -28,6 +32,22 @@ class Room {
     }
     examine() {
         boxPrint(this.exam);
+    }
+}
+
+class Chest {
+    constructor(appearance, exam, isLocked, contents) {
+        this.appearance = appearance;
+        this.exam = exam;
+        this.isLocked = isLocked;
+        this.contents;
+    }
+    openChest(){
+        if(!islocked){
+            boxPrint(this.contents);
+        } else {
+            boxPrint('The chest is locked!');
+        }
     }
 }
 
