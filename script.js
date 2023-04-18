@@ -9,14 +9,14 @@ class Door {
         this.destination = destination;
     }
     goThru() {
-        if(!isLocked){
-        boxPrint(`You went through the ${this.name}`);
-        dungeon.pcLocation = this.destination;
-        return dungeon.pcLocation;
-            
+        if (!isLocked) {
+            boxPrint(`You went through the ${this.name}`);
+            dungeon.pcLocation = this.destination;
+            return dungeon.pcLocation;
         } else {
             boxPrint('This door is locked!');
-        }}
+        }
+    }
     describe() {
         boxPrint(this.description);
     }
@@ -42,8 +42,8 @@ class Chest {
         this.isLocked = isLocked;
         this.contents;
     }
-    openChest(){
-        if(!islocked){
+    openChest() {
+        if (!islocked) {
             boxPrint(this.contents);
         } else {
             boxPrint('The chest is locked!');
@@ -53,6 +53,22 @@ class Chest {
 
 roomOne = new Room('very nice', 'a nice room');
 roomTwo = new Room('super spooky', 'is that bones over there?');
+roomThree = new Room(
+    'do these rooms just get spookier and spookier?',
+    'someone should call OSHA'
+);
+roomFour = new Room(
+    'actually a pretty pleasant room',
+    "oh wait, it's more bones."
+);
+roomFive = new Room(
+    'a room with an orc',
+    'is he a nice orc? is there any such thing?'
+);
+roomSix = new Room(
+    'a room with twinkling treasure',
+    'maybe if i just took a few pockets full of treasure...'
+);
 
 const dungeon = {
     pcLocation: roomOne,
@@ -60,7 +76,82 @@ const dungeon = {
         doorNorth: new Door('North Door', 2, false, 'a solid door', roomTwo),
     },
     roomTwo: {
-        doorNorth: new Door('South Door', 2, false, 'a solid door', roomOne),
+        doorSouth: new Door('South Door', 2, false, 'a solid door', roomOne),
+        doorEast: new Door(
+            'East Door',
+            2,
+            false,
+            'a rickety old door',
+            roomThree
+        ),
+        doorNorth: new Door(
+            'North Door',
+            2,
+            true,
+            'a sturdy door with a solid lock',
+            roomFour
+        ),
+    },
+    roomThree: {
+        doorWest: new Door(
+            'West Door',
+            2,
+            false,
+            'a typical wooden door...not much to look at',
+            roomTwo
+        ),
+        monster: new Meatbag('Phillip', 'orc', 'male'),
+        chest: new Chest(
+            'a well-worn old chest',
+            'it might have some dustbunnies in it',
+            false,
+            ['key', 'dustbunnies']
+        ),
+    },
+    roomFour: {
+        doorSouth: new Door(
+            'South Door',
+            2,
+            false,
+            'a door behind you',
+            roomTwo
+        ),
+        doorWest: new Door(
+            'West Door',
+            2,
+            false,
+            'a handsomely crafted door',
+            roomFive
+        ),
+        doorNorth: new Door(
+            'North Door',
+            2,
+            true,
+            'a soundly locked oaken door',
+            roomSix
+        ),
+        puzzle: {
+            appearance: 'a tricksy puzzle',
+            solved: (isSolved = false),
+            fixThis:
+                'this puzzle needs a class and methods to unlock doorNorth',
+        },
+    },
+    roomFive: {
+        doorEast: new Door(
+            'East Door',
+            2,
+            false,
+            'a ratherly easterly door',
+            roomFour
+        ),
+        monster: new Meatbag('Hank', 'orc', 'male'),
+        clue: 'the puzzle in room four can only be solved through DM-Magic',
+    },
+    roomSix: {
+        doorSouth: new Door('South Door', 2, false, roomFour),
+        treasure: 'fat stacks of gold',
+        aWayOut: 'ends game',
     },
 };
 
