@@ -4,6 +4,7 @@
     border: solid black 5px;
     margin: auto;
     text-align: center;
+    box-shadow: inset 1px 1px;
 }
 
 #headerText {
