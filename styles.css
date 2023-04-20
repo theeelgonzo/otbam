@@ -13,9 +13,18 @@
 }
 
 #textBox {
-    margin: auto;
+    flex: 1;
+    max-width: 50%
+
 }
 
 #subBut {
-    margin: auto;
+    flex 1;
+    
+}
+
+.comBox, .comBut{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
