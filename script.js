@@ -40,13 +40,18 @@ class PlayerCharacter extends Meatbag {
     //}
 
     talk(target, quote) {
-        if (typeof target == 'undefined') {
-            console.log(typeof target);
-            console.log(`You cannot speak to ${target} right now.`);
+        if(dungeon.pcLocation.hasOwnProperty('monster')){
+            console.log('You can talk to the monster);
         } else {
-            console.log(typeof target);
-            console.log(`${target.name} would love to talk to you.`);
+            console.log('There is no one here to talk to!');
         }
+        //if (typeof target == 'undefined') {
+        //    console.log(typeof target);
+        //    console.log(`You cannot speak to ${target} right now.`);
+        //} else {
+        //    console.log(typeof target);
+        //    console.log(`${target.name} would love to talk to you.`);
+        //}
     }
     walk() {
         console.log('There you go, walking again.');
