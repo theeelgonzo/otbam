@@ -1,4 +1,9 @@
+body {
+    background: green;
+}
+
 .box {
+    background: rgba(122, 122, 122, 0.5);
     height: 20em;
     width: 20em;
     border: solid black 5px;
@@ -14,12 +19,15 @@
 
 #textBox {
     flex: 1;
-    max-width: 50%
-
+    max-width: 30%;
+    border: solid black 2px;
+    border-radius: 5px;
+    
 }
 
 #subBut {
     flex 1;
+    border: solid black 1px;
     
 }
 
