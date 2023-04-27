@@ -26,6 +26,9 @@ class Meatbag {
         console.log(`${this.name} attacks ${target.name}`);
         console.log(target);
     }
+    speak(){
+        boxPrint('What may I do for you?');
+    }
 }
 
 class PlayerCharacter extends Meatbag {
