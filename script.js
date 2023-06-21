@@ -266,7 +266,7 @@ john.introduceSelf();
 john.descAffinity();
 
 jordan = new PlayerCharacter('Jordan', 'Human', 'Male');
-jordan.introduceSelf;
+jordan.introduceSelf();
 john.fight(jordan);
 //jordan.talk(darius);
 jordan.talk(john);
