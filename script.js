@@ -26,7 +26,7 @@ class Meatbag {
         console.log(`${this.name} attacks ${target.name}`);
         console.log(target);
     }
-    speak(){
+    speak() {
         boxPrint('What may I do for you?');
     }
 }
@@ -43,8 +43,8 @@ class PlayerCharacter extends Meatbag {
     //}
 
     talk(target, quote) {
-        if(dungeon.pcLocation.hasOwnProperty('monster')){
-            console.log('You can talk to the monster);
+        if (dungeon.pcLocation.hasOwnProperty('monster')) {
+            console.log('You can talk to the monster');
         } else {
             console.log('There is no one here to talk to!');
         }
@@ -106,7 +106,7 @@ class Chest {
         this.appearance = appearance;
         this.exam = exam;
         this.isLocked = isLocked;
-        this.contents;
+        this.contents = contents;
     }
     openChest() {
         if (!islocked) {

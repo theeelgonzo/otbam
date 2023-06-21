@@ -22,16 +22,15 @@ body {
     max-width: 30%;
     border: solid black 2px;
     border-radius: 5px;
-    
 }
 
 #subBut {
-    flex 1;
+    flex: 1;
     border: solid black 1px;
-    
 }
 
-.comBox, .comBut{
+.comBox,
+.comBut {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
