@@ -1,6 +1,6 @@
-body {
+/*body {
     background: green;
-}
+}*/
 
 .box {
     background: rgba(122, 122, 122, 0.5);
@@ -27,6 +27,7 @@ body {
 #subBut {
     flex: 1;
     border: solid black 1px;
+    max-width: 6em;
 }
 
 .comBox,
