@@ -2,21 +2,25 @@
     background: green;
 }*/
 
-.headerTitle, .subtitle{
+.headerTitle,
+.subtitle {
     text-align: center;
+    text-transform: uppercase;
 }
-
 
 .box {
     /*background: rgba(122, 122, 122, 0.5);*/
-    background: radial-gradient(rgba(122,122,122,0.8), rgba(255,255,255,0.3));
+    background: radial-gradient(
+        rgba(122, 122, 122, 0.8),
+        rgba(255, 255, 255, 0.3)
+    );
     height: 20em;
     width: 20em;
     border: solid black 5px;
     margin: auto;
     border-radius: 1em;
     text-align: center;
-    box-shadow: inset 1px 1px;
+    box-shadow: inset 0px 0px 2px 2px rgba(255, 255, 255, 0.2);
 }
 
 #headerText {
