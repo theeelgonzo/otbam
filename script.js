@@ -1,3 +1,10 @@
+const commandButtons = document.querySelectorAll('.gridRow > *');
+commandButtons.forEach((name) => {
+    console.log(name);
+    textVal = name.getAttribute('name');
+    console.log(textVal);
+});
+
 class Meatbag {
     constructor(name, race, gender) {
         this.name = name;
