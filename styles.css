@@ -42,8 +42,15 @@
 }
 
 .comBox,
-.comBut {
+.comBut,
+.commandButtonGrid,
+.gridRow {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.commandButtonGrid {
+    max-width: 8em;
+    margin: 1em auto;
 }
