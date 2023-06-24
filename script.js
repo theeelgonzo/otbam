@@ -1,8 +1,13 @@
+//this function effectively does nothing
 const commandButtons = document.querySelectorAll('.gridRow > *');
 commandButtons.forEach((name) => {
     console.log(name);
     textVal = name.getAttribute('name');
     console.log(textVal);
+    const jerry = document.getElementById(`${textVal}`);
+    jerry.addEventListener(onclick, function () {
+        console.log(`You clicked the ${name} command!`);
+    });
 });
 
 class Meatbag {
