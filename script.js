@@ -1,4 +1,7 @@
 //this function effectively does nothing
+//but it took two whole mornings of my time
+//to try to automate something that might have only taken
+//just ten minutes
 const commandButtons = document.querySelectorAll('.gridRow > *');
 commandButtons.forEach((name) => {
     console.log(name);
