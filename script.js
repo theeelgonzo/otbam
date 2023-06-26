@@ -1,3 +1,18 @@
+//this function effectively does nothing
+//but it took two whole mornings of my time
+//to try to automate something that might have only taken
+//just ten minutes
+const commandButtons = document.querySelectorAll('.gridRow > *');
+commandButtons.forEach((name) => {
+    console.log(name);
+    textVal = name.getAttribute('name');
+    console.log(textVal);
+    const jerry = document.getElementById(`${textVal}`);
+    jerry.addEventListener(onclick, function () {
+        console.log(`You clicked the ${name} command!`);
+    });
+});
+
 class Meatbag {
     constructor(name, race, gender) {
         this.name = name;
