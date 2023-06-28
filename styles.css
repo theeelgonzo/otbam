@@ -55,3 +55,8 @@
     margin: 1em auto;
     background: rgba(255,255,255,0.5);
 }
+
+button {
+    background: #444;
+    color: #FFF;
+}
