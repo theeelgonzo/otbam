@@ -285,3 +285,8 @@ jordan.introduceSelf();
 john.fight(jordan);
 //jordan.talk(darius);
 jordan.talk(john);
+// I can't do a commit today. 6/29/23
+// RIP buddha. Today was too hard to do the work
+// I know it's not right, and I don't want to let the streak die
+// But there is just not a line of code in me today.
+// I am sorry.
