@@ -13,6 +13,15 @@ commandButtons.forEach((name) => {
     });
 });
 
+//here is the manual button selection
+const lookBut = document.getElementById('look');
+const fightBut = document.getElementById('fight');
+const goBut = document.getElementById('go');
+const talkBut = document.getElementById('talk');
+const useBut = document.getElementById('use');
+
+//time to get some event listeneners going
+
 class Meatbag {
     constructor(name, race, gender) {
         this.name = name;
