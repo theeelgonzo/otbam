@@ -8,11 +8,15 @@ commandButtons.forEach((name) => {
     textVal = name.getAttribute('name');
     console.log(textVal);
     const jerry = document.getElementById(`${textVal}`);
-    jerry.addEventListener(onclick, function () {
+    jerry.addEventListener('click', function () {
         console.log(`You clicked the ${name} command!`);
     });
 });
 
+//a function to simplify command button output
+function buttOut(na) {
+    boxPrint(`You pressed the ${na} key!`);
+}
 //here is the manual button selection
 const lookBut = document.getElementById('look');
 const fightBut = document.getElementById('fight');
@@ -21,6 +25,8 @@ const talkBut = document.getElementById('talk');
 const useBut = document.getElementById('use');
 
 //time to get some event listeneners going
+
+lookBut.addEventListener(onclick, buttOut('look'));
 
 class Meatbag {
     constructor(name, race, gender) {
