@@ -2,7 +2,7 @@
 //but it took two whole mornings of my time
 //to try to automate something that might have only taken
 //just ten minutes
-const commandButtons = document.querySelectorAll('.gridRow > *');
+/*const commandButtons = document.querySelectorAll('.gridRow > *');
 commandButtons.forEach((name) => {
     console.log(name);
     textVal = name.getAttribute('name');
@@ -12,10 +12,11 @@ commandButtons.forEach((name) => {
         console.log(`You clicked the ${name} command!`);
     });
 });
-
+*/
 //a function to simplify command button output
 function buttOut(na) {
     boxPrint(`You pressed the ${na} key!`);
+    console.log(na);
 }
 //here is the manual button selection
 const lookBut = document.getElementById('look');
@@ -26,7 +27,25 @@ const useBut = document.getElementById('use');
 
 //time to get some event listeneners going
 
-lookBut.addEventListener(onclick, buttOut('look'));
+lookBut.addEventListener('click', function(){
+    boxPrint('You clicked the look button!');
+});
+
+fightBut.addEventListener('click', function(){
+    boxPrint('You clicked the fight button!')
+});
+
+goBut.addEventListener('click', function(){
+    boxPrint('You pressed the go button!');
+});
+
+talkBut.addEventListener('click', function(){
+    boxPrint('You pressed the talk button!');
+});
+
+useBut.addEventListener('click', function(){
+    boxPrint('You pressed the use button!');
+});
 
 class Meatbag {
     constructor(name, race, gender) {
