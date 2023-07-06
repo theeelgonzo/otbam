@@ -272,7 +272,9 @@ const dungeon = {
 
 document.getElementById('subBut').addEventListener('click', function () {
     let command = document.getElementById('textBox').value;
+    boxPrint(`You entered the word ${command}!`);
     //Add switch bank here to interpret command
+    /*
     switch (command) {
         case 'look':
             boxPrint('What are you looking at, G?');
@@ -301,7 +303,7 @@ document.getElementById('subBut').addEventListener('click', function () {
         default:
             console.log("That's not a command. Try something else.");
             break;
-    }
+    }*/
 });
 
 function boxPrint(message) {
