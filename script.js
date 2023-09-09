@@ -14,6 +14,12 @@ commandButtons.forEach((name) => {
 });
 */
 //a function to simplify command button output
+//
+//
+function startGame(){
+    console.log('Are you ready to start the game?');
+}
+
 function buttOut(na) {
     boxPrint(`You pressed the ${na} key!`);
     console.log(na);
@@ -24,6 +30,7 @@ const fightBut = document.getElementById('fight');
 const goBut = document.getElementById('go');
 const talkBut = document.getElementById('talk');
 const useBut = document.getElementById('use');
+const startGame = document.getElementById('startGame');
 
 //time to get some event listeneners going
 
